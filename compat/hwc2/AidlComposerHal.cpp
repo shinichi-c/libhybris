@@ -220,6 +220,12 @@ public:
         return ::ndk::ScopedAStatus::ok();
     }
 
+    // --- NEW METHOD ADDED HERE TO FIX THE BUILD ERROR ---
+    ::ndk::ScopedAStatus onHdcpLevelsChanged(int64_t /*in_display*/, const ::aidl::android::hardware::drm::HdcpLevels& /*in_levels*/) override {
+        return ::ndk::ScopedAStatus::ok();
+    }
+    // ----------------------------------------------------
+
 #if ANDROID_VERSION_MAJOR >= 14
     ::ndk::ScopedAStatus onRefreshRateChangedDebug(
             const RefreshRateChangedDebugData& refreshRateChangedDebugData) override {
